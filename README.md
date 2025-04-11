@@ -12,7 +12,7 @@ This project is a web application developed with Flask for apt-based Linux distr
 
 ## Installation
 
-Clone the repository and change the directory to it's folder, then install the requirements
+Clone the repository and change the directory to its folder, then install the requirements
 ```shell
 pip install requirements.txt
 ```
@@ -20,7 +20,7 @@ For this to work you have to install the lm-sensors package and detect sensors f
 ## Configuration
 
 There are some things you need to change in the main.py file in order to make it work.
-In the file there are comments of where to change the parameters, you need to change the disk directory and optionally(but raccomended!) the app secret key.
+In the file there are comments of where to change the parameters, you need to change the disk directory and optionally(but reccomended!) the app secret key.
 You can change the port to connect with a browser(the default is 80).
 
 ## Future updates
