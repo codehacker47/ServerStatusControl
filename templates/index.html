@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Status</title>
+</head>
+<body>
+    <h1>Server Status</h1>
+    
+    <h2>Informations about disk</h2>
+    <p>Total: {{ usage.total // (2**30) }} GiB</p>
+    <p>Occupied: {{ usage.used // (2**30) }} GiB</p>
+    <p>Free space: {{ usage.free // (2**30) }} GiB</p>
+    <p>Occupied percentual: {{ usage.percent }}%</p>
+
+    <h2>Restart Samba</h2>
+    <form action="{{ url_for('restart') }}" method="post">
+        <button type="submit">Restart Samba</button>
+    </form>
+    
+    <h3>See sensors temperatures</h3>
+    <form action="{{ url_for('sensor_flash') }}" method="post">
+        <button type="submit">Get sensors temperatures</button>
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
